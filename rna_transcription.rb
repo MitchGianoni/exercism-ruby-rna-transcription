@@ -11,6 +11,8 @@ class Complement
         rna = 'A'
       elsif dna == 'A'
         rna = 'U'
+      else
+        rna = ''
       end
       return rna
     else
