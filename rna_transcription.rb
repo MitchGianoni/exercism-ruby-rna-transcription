@@ -1,17 +1,40 @@
+require 'pry'
+
 class Complement
-  def self.of_dna(x)
-    if x == 'G'
-      return 'C'
-    elsif x == 'C'
-      return 'G'
-    elsif x == 'T'
-      return 'A'
-    elsif x == 'A'
-      return 'U'
+  def self.of_dna(dna)
+    if dna.length == 1
+      if dna == 'G'
+        rna = 'C'
+      elsif dna == 'C'
+        rna = 'G'
+      elsif dna == 'T'
+        rna = 'A'
+      elsif dna == 'A'
+        rna = 'U'
+      end
+      return rna
+    else
+      dna_array = dna.split('')
+      i = 0
+      while i < dna_array.length
+        if dna_array[i] == 'G'
+          dna_array[i] = 'C'
+          i += 1
+        elsif dna_array[i] == 'C'
+          dna_array[i] = 'G'
+          i += 1
+        elsif dna_array[i] == 'T'
+         dna_array[i] = 'A'
+         i += 1
+        elsif dna_array[i] == 'A'
+          dna_array[i] = 'U'
+          i += 1
+        end
+      end
+
+      return dna_array.join('')
     end
   end
 end
 
-# class RnaTranscription
-
-# end
+Complement.of_dna('ACGTGGTCTTAA')
