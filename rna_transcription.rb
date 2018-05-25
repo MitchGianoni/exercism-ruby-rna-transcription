@@ -31,6 +31,9 @@ class Complement
         elsif dna_array[i] == 'A'
           dna_array[i] = 'U'
           i += 1
+        else
+          dna_array = ['']
+          i = dna_array.length
         end
       end
 

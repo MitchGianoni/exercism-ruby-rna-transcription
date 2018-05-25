@@ -34,7 +34,7 @@ class RnaTranscriptionTest < Minitest::Test
   end
 
   def test_correctly_handles_completely_invalid_dna_input
-    skip
+    # skip
     assert_equal '', Complement.of_dna('XXX')
   end
 
